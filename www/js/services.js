@@ -1,6 +1,6 @@
 angular
   .module('starter.services', [])
-  .factory('Times', Times);
+  .factory('Times', Times)
   .factory('DB', DB)
   .factory('Document', Document)
   ;
