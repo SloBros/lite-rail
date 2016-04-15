@@ -1,7 +1,8 @@
-angular.module('starter.controllers', [])
-
-.controller('AppCtrl', AppCtrl)
-.controller('DashCtrl', DashCtrl);
+angular
+  .module('starter.controllers', [])
+  .controller('AppCtrl', AppCtrl)
+  .controller('DashCtrl', DashCtrl)
+;
 
 function AppCtrl($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ionicPopup) {
 
@@ -14,6 +15,6 @@ function AppCtrl($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ioni
   $location.path('/app/dashboard');
 }
 
-function DashCtrl($scope, $stateParams , Profiles) {
-  $scope.profiles = Profiles.all();
+function DashCtrl($scope, $stateParams , Times) {
+  $scope.times = Times.all();
 }

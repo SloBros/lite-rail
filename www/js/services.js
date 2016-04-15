@@ -1,57 +1,28 @@
 angular
   .module('starter.services', [])
-  .factory('Profiles', Profiles);
+  .factory('Times', Times);
 
-function Profiles() {
+function Times() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var profiles = [{
-    id: 0,
-    name: 'Anoop Kumar',
-    deseg: 'Team Lead',
-    face: 'img/150x165/anoop-kumar.png'
+  var times = [{
+    line: 'H',
+    arrival: '4:24PM',
+    untilArrival: '2'
   }, {
-    id: 1,
-    name: 'Vijay Kumar',
-    deseg: 'Project Manager',
-    face: 'img/150x165/vijay-kumar.png'
+    line: 'F',
+    arrival: '4:27PM',
+    untilArrival: '5'
   }, {
-    id: 2,
-    name: 'Durgesh Soni',
-    deseg: 'Team Lead',
-    face: 'img/150x165/durgesh-soni.png'
-  }, {
-    id: 3,
-    name: 'Manish Mittal',
-    deseg: 'Project Manager',
-    face: 'img/150x165/manish-mittal.png'
-  }, {
-    id: 4,
-    name: 'Vinay Kumar',
-    deseg: 'UI Designer',
-    face: 'img/150x165/vinay-kumar.png'
-  }, {
-    id: 5,
-    name: 'Ankit Gera',
-    deseg: 'System Administrator',
-    face: 'img/150x165/ankit-gera.png'
+    line: 'E',
+    arrival: '4:31PM',
+    untilArrival: '9'
   }];
 
   return {
     all: function() {
-      return profiles;
-    },
-    remove: function(id) {
-      profiles.splice(profiles.indexOf(id), 1);
-    },
-    get: function(profileId) {
-      for (var i = 0; i < profiles.length; i++) {
-        if (profiles[i].id === parseInt(profileId)) {
-          return profiles[i];
-        }
-      }
-      return null;
+      return times;
     }
   };
 }
