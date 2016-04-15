@@ -4,9 +4,17 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
+angular
 
-.run(function($ionicPlatform , $rootScope, $timeout) {
+.module('starter', [
+    'ionic',
+    'starter.controllers',
+    'starter.services'
+])
+.run(run)
+.config(config);
+
+function run($ionicPlatform , $rootScope, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,42 +28,36 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+  //$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+  //	console.log("URL : "+toState.url);
+  //	if(toState.url=='/dashboard'){
+  //		console.log("match : "+toState.url);
+  //		$timeout(function(){
+  //			angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
+  //		},1000);
+  //	}
+  //});
+}
 
-	//$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-	//	console.log("URL : "+toState.url);
-	//	if(toState.url=='/dashboard'){
-	//		console.log("match : "+toState.url);
-	//		$timeout(function(){
-	//			angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-	//		},1000);
-	//	}
-	//});
-
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
+function config($stateProvider, $urlRouterProvider) {
   $stateProvider
-
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
-
-//--------------------------------------
-
-  .state('app.dashboard', {
-    url: '/dashboard',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/dashboard.html',
-		controller: 'DashCtrl'
-      }
-     },
-	 authStatus: true
-  });
-
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
+    //--------------------------------------
+    .state('app.dashboard', {
+      url: '/dashboard',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/dashboard.html',
+          controller: 'DashCtrl'
+        }
+      },
+      authStatus: true
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/dashboard');
-});
+}
