@@ -12,9 +12,27 @@ angular
     'starter.services'
 ])
 .run(run)
-.config(config);
+.config(config)
+.constant('DB_CONFIG', {
+    name: 'DB',
+    tables: [
+      {
+            name: 'documents',
+            columns: [
+                {name: 'id', type: 'integer primary key'},
+                {name: 'title', type: 'text'},
+                {name: 'keywords', type: 'text'},
+                {name: 'version', type: 'integer'},
+                {name: 'release_date', type: 'text'},
+                {name: 'filename', type: 'text'},
+                {name: 'context', type: 'text'}
+            ]
+        }
+    ]
+});
+;
 
-function run($ionicPlatform , $rootScope, $timeout) {
+function run($ionicPlatform , $rootScope, $timeout, DB) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -27,6 +45,7 @@ function run($ionicPlatform , $rootScope, $timeout) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    // DB.init();
   });
   //$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
   //	console.log("URL : "+toState.url);

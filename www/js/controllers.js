@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
-
 .controller('AppCtrl', AppCtrl)
-.controller('DashCtrl', DashCtrl);
+.controller('DashCtrl', DashCtrl)
+.controller('DocumentCtrl', DocumentCtrl)
+;
 
 function AppCtrl($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ionicPopup) {
 
@@ -17,3 +18,16 @@ function AppCtrl($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ioni
 function DashCtrl($scope, $stateParams , Profiles) {
   $scope.profiles = Profiles.all();
 }
+
+function DocumentCtrl($scope, Document) {
+    $scope.documents = [];
+    $scope.document = null;
+    // Get all the documents
+    Document.all().then(function(documents){
+        $scope.documents = documents;
+    });
+    // Get one document, example with id = 2
+    Document.getById(2).then(function(document) {
+        $scope.document = document;
+    });
+};
