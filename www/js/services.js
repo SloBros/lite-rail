@@ -1,6 +1,8 @@
-angular.module('starter.services', [])
+angular
+  .module('starter.services', [])
+  .factory('Profiles', Profiles);
 
-.factory('Profiles', function() {
+function Profiles() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -16,23 +18,23 @@ angular.module('starter.services', [])
     face: 'img/150x165/vijay-kumar.png'
   }, {
     id: 2,
-	name: 'Durgesh Soni',
-	deseg: 'Team Lead',
+    name: 'Durgesh Soni',
+    deseg: 'Team Lead',
     face: 'img/150x165/durgesh-soni.png'
   }, {
     id: 3,
-	 name: 'Manish Mittal',
+    name: 'Manish Mittal',
     deseg: 'Project Manager',
     face: 'img/150x165/manish-mittal.png'
   }, {
     id: 4,
-	name: 'Vinay Kumar',
-	deseg: 'UI Designer',
+    name: 'Vinay Kumar',
+    deseg: 'UI Designer',
     face: 'img/150x165/vinay-kumar.png'
   }, {
     id: 5,
-	name: 'Ankit Gera',
-	deseg: 'System Administrator',
+    name: 'Ankit Gera',
+    deseg: 'System Administrator',
     face: 'img/150x165/ankit-gera.png'
   }];
 
@@ -52,4 +54,4 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+}

@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ionicPopup) {
+.controller('AppCtrl', AppCtrl)
+.controller('DashCtrl', DashCtrl);
+
+function AppCtrl($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ionicPopup) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -9,9 +12,8 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   $location.path('/app/dashboard');
-})
+}
 
-.controller('DashCtrl', function($scope, $stateParams , Profiles) {
-	$scope.profiles = Profiles.all();
-});
-
+function DashCtrl($scope, $stateParams , Profiles) {
+  $scope.profiles = Profiles.all();
+}
