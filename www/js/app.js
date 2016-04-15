@@ -21,25 +21,15 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     }
   });
 
-     $rootScope.authStatus = false;
-	 //stateChange event
-	  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-		  $rootScope.authStatus = toState.authStatus;
-		  if($rootScope.authStatus){
-			  
-			
-		  }
-    });
-
-	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-		console.log("URL : "+toState.url);
-		if(toState.url=='/dashboard'){
-			console.log("match : "+toState.url);
-			$timeout(function(){
-				angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-			},1000);
-		}	
-	});
+	//$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+	//	console.log("URL : "+toState.url);
+	//	if(toState.url=='/dashboard'){
+	//		console.log("match : "+toState.url);
+	//		$timeout(function(){
+	//			angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
+	//		},1000);
+	//	}
+	//});
 
 })
 
@@ -55,27 +45,6 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 //--------------------------------------
 
- .state('app.login', {
-    url: '/login',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/tab-signin.html'
-      }
-    },
-	authStatus: false
-  })
- .state('app.signup', {
-    url: '/signup',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/tab-signup.html',
-      }
-   },
-	authStatus: false
-  })
-//--------------------------------------
-
-
   .state('app.dashboard', {
     url: '/dashboard',
     views: {
@@ -85,28 +54,8 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
       }
      },
 	 authStatus: true
-  })
-
-
-    .state('app.profiles', {
-      url: '/profiles',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/profiles.html',
-          controller: 'ProfilesCtrl'
-        }
-      }
-    })
-
-  .state('app.profile', {
-    url: '/profile/:profileId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/profile-detail.html',
-        controller: 'ProfileCtrl'
-      }
-    }
   });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/dashboard');
 });
