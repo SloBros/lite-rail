@@ -12,15 +12,18 @@ function Times() {
   var times = [{
     line: 'H',
     arrival: '4:24PM',
-    untilArrival: '2'
+    untilArrival: '2',
+    destination: '18th and California'
   }, {
     line: 'F',
     arrival: '4:27PM',
-    untilArrival: '5'
+    untilArrival: '5',
+    destination: '18th and California'
   }, {
     line: 'E',
     arrival: '4:31PM',
-    untilArrival: '9'
+    untilArrival: '9',
+    destination: 'Union Station'
   }];
 
   return {

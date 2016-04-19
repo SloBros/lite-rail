@@ -2,14 +2,23 @@
   <ion-content scroll="false">
 
     <div class="list">
-      <a class="item item-icon-left" ng-repeat="time in times">
-        <i class="icon ion-android-train"></i>
-        {{time.line}}
-        <br/>
-        {{time.arrival}}
-        <span style="float:right;">
-          {{time.untilArrival}}
-        </span>
+      <a class="item" ng-class="time.line" ng-repeat="time in times">
+        <div class="row no-padding">
+          <div class="col col-50 no-padding">
+            <h1>
+              <!--<i class="icon ion-android-train"></i>-->
+              {{time.line}}
+            </h1>
+            <p>{{time.destination}}</p>
+            <p>{{time.arrival}}</p>
+          </div>
+          <div class="col col-50 no-padding">
+            <h1 class="text-right">
+              <!--<i class="icon ion-android-train"></i>-->
+              {{time.untilArrival}}<span class="small">min</span>
+            </h1>
+          </div>
+        </div>
       </a>
     </div>
 

@@ -1,0 +1,99 @@
+.direction-bar {
+  padding: 0;
+}
+
+.direction-button {
+  color: #454545;
+  background-color: #eee;
+  line-height: 44px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.direction-button.active {
+  background-color: #F43E3E;
+  color: white;
+}
+
+.direction-button:first-child {
+  border-right: 2px solid #4f4f4f;
+}
+
+.bar-stable.app-header {
+  background: #4f4f4f;
+  color: white;
+}
+
+.bar.bar-stable .title {
+  color: white;
+}
+
+.bar-stable .button.button-clear {
+  color: white;
+}
+
+.bar-header {
+  border-bottom-width: 0;
+}
+
+.list {
+  border: none;
+  padding: 0;
+  color: white;
+  a.item {
+    color: white;
+    background-color: gray;
+    border: none;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    border-bottom-color: #4f4f4f;
+    border-top-color: #b3b3b3;
+    margin: 0;
+    p {
+      color: white;
+    }
+    h1 {
+      margin: 0;
+      color: white;
+      .small {
+        font-size: .75rem;
+        margin-left: 3px;
+      }
+      i {
+        position: static;
+        display: inline-block;
+      }
+    }
+    //TRAIN LINE SPECIFIC CSS
+    //CAPITAL CLASS NAME
+    //ALPHABETICAL
+    &.E {
+      background-color: #542785;
+      border-top-color: #602C95;
+      border-bottom-color: #2D1247;
+      &.activated {
+        background-color: #471E73;
+        //border-top-color: #2D1247;
+      }
+    }
+    &.F {
+      background-color: #A20202;
+      border-top-color: #BD0E0E;
+      border-bottom-color: #5A0000;
+    }
+    &.H {
+      background-color: #0076BF;
+      border-top-color: #008DC8;
+      border-bottom-color: #01375A;
+    }
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+

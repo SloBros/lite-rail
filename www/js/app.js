@@ -29,33 +29,13 @@ angular
             ]
         }
     ]
-});
+})
 ;
 
 function run($ionicPlatform , $rootScope, $timeout, DB) {
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-    // DB.init();
+    // Insert Run Methods Here
   });
-  //$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-  //	console.log("URL : "+toState.url);
-  //	if(toState.url=='/dashboard'){
-  //		console.log("match : "+toState.url);
-  //		$timeout(function(){
-  //			angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-  //		},1000);
-  //	}
-  //});
 }
 
 function config($stateProvider, $urlRouterProvider) {
@@ -77,6 +57,7 @@ function config($stateProvider, $urlRouterProvider) {
       },
       authStatus: true
     });
-  // if none of the above states are matched, use this as the fallback
+
+  // If none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/dashboard');
 }
